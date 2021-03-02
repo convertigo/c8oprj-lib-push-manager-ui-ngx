@@ -1,0 +1,13 @@
+↑isRoot: true
+segment: path-to-demopage
+title: Title for Page
+↓PageEvent [ngx.components.UIPageEvent-1591517938559]: 
+  ↓InvokeSharedAction [ngx.components.UIDynamicInvoke-1591517959608]: 
+    beanData: '{"ionBean":"InvokeAction"}'
+    stack: lib_PushManager_Ngx.MobileApplication.Application.FCMPushNotifications
+    ↓Topics [ngx.components.UIControlVariable-1591618689455]: 
+      comment: Array of topics this app can be notified on
+      varValue: 
+        - xmlizable: 
+          - ↑classname: com.twinsoft.convertigo.beans.ngx.components.MobileSmartSourceType
+          - MobileSmartSourceType: script:['convertigo']

@@ -1,0 +1,11 @@
+↑convertigo: 8.0.0.m006
+↓lib_PushManager_Ngx [core.Project]: 
+  comment: This library handles push notification registers from mobile devices and holds a sample push notification sequence.
+  version: 2.0.0
+  ↓FCMConnector [connectors.HttpConnector]: 🗏 connectors/FCMConnector.yaml
+  ↓PushManagerDataBase [connectors.SqlConnector]: 🗏 connectors/PushManagerDataBase.yaml
+  ↓SendNotifications [sequences.GenericSequence]: 🗏 sequences/SendNotifications.yaml
+  ↓Project_reference [references.ProjectSchemaReference]: 
+    projectName: mobilebuilder_tpl_8_0_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl.git:branch=mobilebuilder_tpl_8_0_0_ngx:autoPull=true
+  ↓MobileApplication [core.MobileApplication]: 
+    ↓Application [ngx.components.ApplicationComponent]: 🗏 mobileApplication.yaml
