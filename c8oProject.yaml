@@ -4,7 +4,7 @@
   version: 2.0.0
   ↓void [connectors.SqlConnector]: 🗏 connectors/void.yaml
   ↓lib_PushManager_reference [references.ProjectSchemaReference]: 
-    projectName: lib_PushManager=git@github.com:convertigo/c8oprj-lib-push-manager.git:branch=7.9.0
+    projectName: lib_PushManager=git@github.com:convertigo/c8oprj-lib-push-manager.git:branch=7.9.0:autoPull=true
   ↓Project_reference [references.ProjectSchemaReference]: 
     projectName: mobilebuilder_tpl_8_0_0_ngx=https://github.com/convertigo/c8oprj-mobilebuilder-tpl.git:branch=mobilebuilder_tpl_8_0_0_ngx:autoPull=true
   ↓MobileApplication [core.MobileApplication]: 
