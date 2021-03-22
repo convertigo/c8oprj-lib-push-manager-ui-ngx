@@ -1,33 +1,5 @@
-# lib_PushManager_Ngx
-This is the Firebase Cloud Messaging (FCM) Push notifications library for the Convertigo Low Code Platform. This library brings the server part and the client part for Firebase Push Notifications support for Convertigo mobile builder apps. 
-
-## Setting up the Firebase Service
-
-1. Connect to the firebase console : [https://console.firebase.google.com/](https://console.firebase.google.com/)
-2. Sign in with your google account and add a project by clicking on the "+" (add project)
-3. Give your project a name, hit "Continue", Disable or enable google Analytics and hit "Continue"
-4. Wait for the resources to be provisioned, Hit "Continue", you will be on the firebase overview page
-5. Click on the Gear icon next to "Project Overview" -> "Project settings" to configure your Firebase  project
-6. Add your iOS and Android app by clicking on the iOS or Android icons. When you add your apps be sure to configure a valid bundle id (iOS) or Android package name (Android) and use the same ids for both platforms, for example __"com.mycompany.myapp"__. The id configured here will be used later on to configure the __MobileApplication__ object in Convertigo project.
-7. Download the config files, this will be the __GoogleService-info.plist__ (iOS) or the __google-services.json__ (Android). These files will have to be included in your app and described in the next section.
-8. You can ignore next steps for Convertigo Mobile Builder applications. for Convertigo SDK Applications, follow the steps to include the FCM SDK in your app.
-
-## Getting your server key
-
-Firebase services automatically generated a Server key. You will need it to Configure the Convertigo Push manager Library. To get your server key:
-
-1. Click "settings" in top header of the projet, then click on the "Cloud Messaging" tab.
-2. Copy the "Server Key" and paste it to the Convertigo global Symbol named **lib_PushManager_Ngx.serverKey** in Convertigo Administration console.
-
-## Configure your iOS APNS notifications (Only if you want to do iOS notifications)
-
-FCM supports APNS notification for iOS. You will have to configure your APNS Auth key. This is done in the "Cloud Messaging' tab under the "iOS app configuration" section (this section will be shown only if you added an iOS app to your FCM project). To get your APNS Auth key, you need an Apple developer account and connect to :  
-
-[https://developer.apple.com/account/resources/authkeys/add](https://developer.apple.com/account/resources/authkeys/add)
-
-Add an APNS key, give it a name and be sure to know your team id (shown in upper right corner of the apple developer portal)
-
-Once the key is generated, download the .P8 file, and upload it in the FCM "iOS app configuration" section with its name and TEAM ID.
+# lib_PushManager_ui_ngx
+Uses the Firebase Cloud Messaging (FCM) Push notifications library for the Convertigo Low Code Platform. This library brings the client part for Firebase Push Notifications support for Convertigo mobile builder apps. 
 
 ## Client Part configuration
 
@@ -37,7 +9,7 @@ The library provides a __FCMPushNotifications__ Convertigo Shared action you mus
 2. On the project reference property click on the __"Project name and remote URL"__ property '...' to edit the property
 3. Paste in the "Project Remote URL" field this reference :
 
-		lib_PushManager_Ngx=https://github.com/convertigo/c8oprj-lib-push-manager-ngx.git
+		lib_PushManager_ui_ngx=https://github.com/convertigo/c8oprj-lib-push-manager-ui-ngx.git:branch=8.0.0
  
 	  
 	The library will be downloaded from github and installed in your Convertigo workspace.
@@ -91,19 +63,3 @@ You can receive FCM events by using a [Subscribe Handler](https://www.convertigo
 			}
 		}					   
        
-## Server part configuration
-
-For the server part you will need to configure a Convertigo Global symbol for the FCM server key. Set the : 
-
-		lib_PushManager_Ngx.serverKey
-
-To the value of the key you copied in the section __Getting your server key__ 
-
-## Server part usage
-
-When you want to send a notification on a topic, just use the __SendNotifications__ sequence and use the following variables :
-
-* topic   : The topic you want to notify on. All devices registered with this topic will receive the notification
-* title   : The title of the notification. Will appear in the notification tray
-* payload : The message body for notification
-* sound	  : Sound to be played upon notification. Supports "default" or the filename of a sound resource bundled in the app. Sound files must reside in __/res/raw/__ (Android) or String specifying sound files in the main bundle of the client app or in the Library/Sounds folder of the app's data container. See the iOS Developer Library for more information (iOS). 
